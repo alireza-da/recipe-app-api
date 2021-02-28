@@ -1,8 +1,7 @@
 from django.test import TestCase
-
-import app.app.calc as calc
+from calc import add
 
 
 class CalcTests(TestCase):
     def test_add_numbers(self):
-        self.assertEqual(calc.add(3, 8), 11)
+        self.assertEqual(add(3, 8), 11)
