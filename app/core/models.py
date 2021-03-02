@@ -11,6 +11,13 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+    def create_superuser(self, email , password):
+        # Create & Save new superuser
+        user = self.create_user(email,password)
+        user.is_staff = True
+        user.is_superuser = True
+        user.save(using=self._db)
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     # Custom user model support gmail instead of username
