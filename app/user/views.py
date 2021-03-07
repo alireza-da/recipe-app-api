@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from serializers import UserSerializer
+from user.serializers import UserSerializer
 from rest_framework import generics
 
 
