@@ -36,7 +36,6 @@ class PublicUserApiTest(TestCase):
         payload = {
             "email": "test@test.com",
             "password": "test123",
-            "name": "lololo"
         }
         create_user(**payload)
         response = self.client.post(CREATE_USER_URL, payload)
@@ -57,7 +56,10 @@ class PublicUserApiTest(TestCase):
 
     def test_create_token_for_user(self):
         # Test a token is created for the user
-        payload = {'email': 'test@test.com', 'password': 'test123'}
+        payload = {
+            'email': 'test@test.com',
+            'password': 'test123',
+        }
         create_user(**payload)
 
         response = self.client.post(TOKEN_URL, payload)
