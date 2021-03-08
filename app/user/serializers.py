@@ -37,5 +37,3 @@ class AuthTokenSerializer(serializers.Serializer):
             raise serializers.ValidationError(message, code='authentication')
         attrs['user'] = user
         return user
-
-
