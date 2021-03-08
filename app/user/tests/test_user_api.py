@@ -59,6 +59,7 @@ class PublicUserApiTest(TestCase):
         payload = {
             'email': 'test@test.com',
             'password': 'test123',
+            'name': 'Hanalolo'
         }
         create_user(**payload)
 
