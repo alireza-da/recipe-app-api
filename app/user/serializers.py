@@ -25,7 +25,13 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 
-class AuthTokenSerializer(serializers.Serializer, ABC):
+class AuthTokenSerializer(serializers.Serializer):
+    def update(self, instance, validated_data):
+        pass
+
+    def create(self, validated_data):
+        pass
+
     # Serializer authentication object
     email = serializers.CharField()
     password = serializers.CharField(
