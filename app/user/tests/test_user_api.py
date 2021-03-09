@@ -61,9 +61,7 @@ class PublicUserApiTest(TestCase):
             'email': 'test@test.com',
             'password': 'test123',
         }
-
-        print(create_user(**payload))
-        response = self.client.post(TOKEN_URL, payload)
+        response = self.client.post(TOKEN_URL, payload, format='json')
         self.assertIn('token', response.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
