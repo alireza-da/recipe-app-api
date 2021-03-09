@@ -89,10 +89,7 @@ DATABASES = {
     }
 }
 
-REST_FRAMEWORK = [
-    'rest_framework.authentication.SessionAuthentication',
-    'rest_framework.authentication.BasicAuthentication',
-]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
