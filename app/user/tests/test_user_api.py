@@ -62,6 +62,7 @@ class PublicUserApiTest(TestCase):
             'password': 'test123',
         }
         response = self.client.post(TOKEN_URL, payload, format='json')
+        print(response.data)
         self.assertIn('token', response.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
