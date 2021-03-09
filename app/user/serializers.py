@@ -26,11 +26,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class AuthTokenSerializer(serializers.Serializer):
-    def update(self, instance, validated_data):
-        pass
-
-    def create(self, validated_data):
-        pass
 
     # Serializer authentication object
     email = serializers.CharField()
@@ -52,6 +47,7 @@ class AuthTokenSerializer(serializers.Serializer):
             message = _("Unable to authenticate with provided credentials")
             raise serializers.ValidationError(message, code='authentication')
         attrs['user'] = user
+        print(attrs)
         return user
 
 
