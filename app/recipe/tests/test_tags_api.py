@@ -45,7 +45,7 @@ class PrivateTagsApiTests(TestCase):
         # Test that tags returned are for authenticated user
         user2 = get_user_model().objects.create_user('other@other.com', 'test123')
         Tag.objects.create(user=user2, name='Fruity')
-        tag = Tag.objects.create(user=user2, name='Comfort Food')
+        tag = Tag.objects.create(user=self.user, name='Comfort Food')
         response = self.client.get(TAGS_URL)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), 1)
