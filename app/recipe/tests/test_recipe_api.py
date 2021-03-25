@@ -29,7 +29,7 @@ class PublicRecipeApiTests(TestCase):
 
     def test_auth_required(self):
         response = self.client.get(RECIPES_URL)
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
 
 class PrivateRecipeApiTest(TestCase):
