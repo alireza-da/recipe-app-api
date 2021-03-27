@@ -107,7 +107,7 @@ class PrivateRecipeApiTest(TestCase):
         tag2 = sample_tag(user=self.user, name="Dessert")
         payload = {
             'title': 'Avocado lime Cheesecake',
-            'tags': [tag1, tag2],
+            'tags': [tag1.id, tag2.id],
             'time_minutes': 60,
             'price': 20.00
         }
