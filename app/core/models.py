@@ -66,7 +66,6 @@ class Ingredient(models.Model):
         return self.name
 
 
-
 class Recipe(models.Model):
     # Recipe object
     user = models.ForeignKey(
