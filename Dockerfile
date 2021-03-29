@@ -17,6 +17,6 @@ COPY ./app /app
 RUN mkdir -p /vol/web/media
 RUN mkdir -p /vol/web/static
 RUN adduser -D runnerUser
-RUN chown -R user:runnerUser /vol/
+RUN chown -R runnerUser:runnerUser /vol/
 RUN chmod -R 755 /vol/web
 USER runnerUser
