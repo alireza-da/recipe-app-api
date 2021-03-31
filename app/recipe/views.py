@@ -47,12 +47,10 @@ class RecipeViewSet(viewsets.ModelViewSet):
         queryset = self.queryset
         if tags:
             tag_ids = self._params_to_ints(tags)
-            print(tag_ids)
             queryset = queryset.filter(tags__id__in=tag_ids)
+            print(queryset)
         if ingredients:
-
             ingredient_ids = self._params_to_ints(ingredients)
-            print(ingredient_ids)
             queryset = queryset.filter(ingredients__id__in=ingredient_ids)
         return self.queryset.filter(user=self.request.user)
 
