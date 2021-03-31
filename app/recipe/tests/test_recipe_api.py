@@ -226,8 +226,8 @@ class RecipeImageUploadTests(TestCase):
         self.assertNotIn(serializer3.data, response.data)
 
     def test_filter_recipes_by_ingredients(self):
-        recipe1 = sample_recipe(user=self.user, title="Kir khar ablimo zade")
-        recipe2 = sample_recipe(user=self.user, title="Aubergine with tahini")
+        recipe1 = sample_recipe(user=self.user, title="Posh beans on toast")
+        recipe2 = sample_recipe(user=self.user, title="Chicken cacciatore")
         ingredient1 = sample_ingredient(user=self.user, name="Feta cheese")
         ingredient2 = sample_ingredient(user=self.user, name="Chicken")
         recipe1.ingredients.add(ingredient1)
