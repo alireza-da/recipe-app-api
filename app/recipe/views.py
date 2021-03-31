@@ -17,7 +17,7 @@ class BaseRecipeAttrViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixi
         queryset = self.queryset
         if assigned_only:
             queryset = queryset.filter(recipe__isnull=False)
-        return self.queryset.filter(user=self.request.user).order_by('-name')
+        return queryset.filter(user=self.request.user).order_by('-name')
 
     def perform_create(self, serializer):
         # Create a new tag
