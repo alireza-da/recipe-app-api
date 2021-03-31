@@ -40,7 +40,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
     def _params_to_ints(self, queryset):
         # Convert a list of string IDs to a list of integers
         print("q"+queryset+"q")
-        return [int(str_id) for str_id in queryset.split([','])]
+        return [int(str_id) for str_id in queryset.split(',')]
 
     def get_queryset(self):
         tags = self.request.query_params.get('tags')
