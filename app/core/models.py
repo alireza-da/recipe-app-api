@@ -13,6 +13,7 @@ def recipe_image_file_path(instance, filename):
     return os.path.join('uploads/recipe/', filename)
 
 
+
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
